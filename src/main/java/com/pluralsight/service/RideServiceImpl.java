@@ -13,9 +13,30 @@ public class RideServiceImpl implements RideService {
 
 	@Autowired
 	private RideRepository rideRepository;
-	
+
 	@Override
 	public List<Ride> getRides() {
 		return rideRepository.getRides();
+	}
+
+	@Override
+	public Ride createRide(Ride ride) {
+		System.out.println("Inside  Service Create Ride");
+		return rideRepository.createRide(ride);
+	}
+
+	@Override
+	public Ride getRide(Integer id) {
+		return rideRepository.getRide(id);
+	}
+
+	@Override
+	public Ride updateRide(Ride ride) {
+		return rideRepository.updateRide(ride);
+	}
+
+	@Override
+	public void deleteRide(Integer id) {
+		rideRepository.deleteRide(id);
 	}
 }
